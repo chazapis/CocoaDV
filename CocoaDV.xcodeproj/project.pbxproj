@@ -8,50 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		E23F156F224430FB005CD170 /* CocoaDV.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F156D224430FB005CD170 /* CocoaDV.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E23F158F224432BD005CD170 /* DExtraDisconnectPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1575224432BA005CD170 /* DExtraDisconnectPacket.h */; };
-		E23F1590224432BD005CD170 /* DVStream.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1576224432BA005CD170 /* DVStream.h */; };
+		E23F158F224432BD005CD170 /* DExtraDisconnectPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1575224432BA005CD170 /* DExtraDisconnectPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F1590224432BD005CD170 /* DVStream.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1576224432BA005CD170 /* DVStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23F1591224432BD005CD170 /* DExtraDisconnectPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1577224432BA005CD170 /* DExtraDisconnectPacket.m */; };
 		E23F1592224432BD005CD170 /* DSTARHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1578224432BA005CD170 /* DSTARHeader.m */; };
-		E23F1593224432BD005CD170 /* DSTARHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1579224432BA005CD170 /* DSTARHeader.h */; };
-		E23F1594224432BD005CD170 /* DExtraClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157A224432BA005CD170 /* DExtraClient.h */; };
-		E23F1595224432BD005CD170 /* DExtraConnectPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157B224432BB005CD170 /* DExtraConnectPacket.h */; };
-		E23F1596224432BD005CD170 /* DExtraConnectNackPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157C224432BB005CD170 /* DExtraConnectNackPacket.h */; };
+		E23F1593224432BD005CD170 /* DSTARHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1579224432BA005CD170 /* DSTARHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F1594224432BD005CD170 /* DExtraClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157A224432BA005CD170 /* DExtraClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F1595224432BD005CD170 /* DExtraConnectPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157B224432BB005CD170 /* DExtraConnectPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F1596224432BD005CD170 /* DExtraConnectNackPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157C224432BB005CD170 /* DExtraConnectNackPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23F1597224432BD005CD170 /* DExtraConnectAckPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F157D224432BB005CD170 /* DExtraConnectAckPacket.m */; };
 		E23F1598224432BD005CD170 /* DSTARFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F157E224432BB005CD170 /* DSTARFrame.m */; };
 		E23F1599224432BD005CD170 /* DVHeaderPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F157F224432BB005CD170 /* DVHeaderPacket.m */; };
 		E23F159A224432BD005CD170 /* DVFramePacket.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1580224432BB005CD170 /* DVFramePacket.m */; };
-		E23F159B224432BD005CD170 /* DExtraConnectAckPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1581224432BB005CD170 /* DExtraConnectAckPacket.h */; };
-		E23F159C224432BD005CD170 /* DExtraDisconnectAckPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1582224432BB005CD170 /* DExtraDisconnectAckPacket.h */; };
+		E23F159B224432BD005CD170 /* DExtraConnectAckPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1581224432BB005CD170 /* DExtraConnectAckPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F159C224432BD005CD170 /* DExtraDisconnectAckPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1582224432BB005CD170 /* DExtraDisconnectAckPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23F159D224432BD005CD170 /* DExtraConnectNackPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1583224432BB005CD170 /* DExtraConnectNackPacket.m */; };
 		E23F159E224432BD005CD170 /* DExtraConnectPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1584224432BB005CD170 /* DExtraConnectPacket.m */; };
-		E23F159F224432BD005CD170 /* DSTARFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1585224432BB005CD170 /* DSTARFrame.h */; };
+		E23F159F224432BD005CD170 /* DSTARFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1585224432BB005CD170 /* DSTARFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23F15A0224432BD005CD170 /* DExtraKeepAlivePacket.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1586224432BC005CD170 /* DExtraKeepAlivePacket.m */; };
 		E23F15A1224432BD005CD170 /* DExtraDisconnectAckPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1587224432BC005CD170 /* DExtraDisconnectAckPacket.m */; };
-		E23F15A2224432BD005CD170 /* DExtraKeepAlivePacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1588224432BC005CD170 /* DExtraKeepAlivePacket.h */; };
+		E23F15A2224432BD005CD170 /* DExtraKeepAlivePacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1588224432BC005CD170 /* DExtraKeepAlivePacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23F15A3224432BD005CD170 /* DExtraClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1589224432BC005CD170 /* DExtraClient.m */; };
 		E23F15A4224432BD005CD170 /* NSData+CRC.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F158A224432BC005CD170 /* NSData+CRC.m */; };
 		E23F15A5224432BD005CD170 /* DVStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F158B224432BC005CD170 /* DVStream.m */; };
-		E23F15A6224432BD005CD170 /* NSData+CRC.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158C224432BC005CD170 /* NSData+CRC.h */; };
-		E23F15A7224432BD005CD170 /* DVFramePacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158D224432BC005CD170 /* DVFramePacket.h */; };
-		E23F15A8224432BD005CD170 /* DVHeaderPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158E224432BC005CD170 /* DVHeaderPacket.h */; };
-		E23F15AF2244D1D2005CD170 /* DVCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F15AD2244D1D2005CD170 /* DVCodec.h */; };
+		E23F15A6224432BD005CD170 /* NSData+CRC.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158C224432BC005CD170 /* NSData+CRC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15A7224432BD005CD170 /* DVFramePacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158D224432BC005CD170 /* DVFramePacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15A8224432BD005CD170 /* DVHeaderPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158E224432BC005CD170 /* DVHeaderPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15AF2244D1D2005CD170 /* DVCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F15AD2244D1D2005CD170 /* DVCodec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23F15B02244D1D2005CD170 /* DVCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F15AE2244D1D2005CD170 /* DVCodec.m */; };
 		E23F15B32244D881005CD170 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23F15B12244D881005CD170 /* CocoaAsyncSocket.framework */; };
 		E23F15B42244D881005CD170 /* CocoaCodec2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23F15B22244D881005CD170 /* CocoaCodec2.framework */; };
-		E23F15D82244DC15005CD170 /* DExtraConnectPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157B224432BB005CD170 /* DExtraConnectPacket.h */; };
-		E23F15D92244DC15005CD170 /* DExtraConnectAckPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1581224432BB005CD170 /* DExtraConnectAckPacket.h */; };
-		E23F15DA2244DC15005CD170 /* DExtraConnectNackPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157C224432BB005CD170 /* DExtraConnectNackPacket.h */; };
-		E23F15DB2244DC15005CD170 /* DExtraDisconnectPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1575224432BA005CD170 /* DExtraDisconnectPacket.h */; };
-		E23F15DC2244DC15005CD170 /* DExtraDisconnectAckPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1582224432BB005CD170 /* DExtraDisconnectAckPacket.h */; };
-		E23F15DD2244DC15005CD170 /* DExtraKeepAlivePacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1588224432BC005CD170 /* DExtraKeepAlivePacket.h */; };
-		E23F15DE2244DC15005CD170 /* DVHeaderPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158E224432BC005CD170 /* DVHeaderPacket.h */; };
-		E23F15DF2244DC15005CD170 /* DVFramePacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158D224432BC005CD170 /* DVFramePacket.h */; };
-		E23F15E02244DC15005CD170 /* DVStream.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1576224432BA005CD170 /* DVStream.h */; };
-		E23F15E12244DC15005CD170 /* DSTARHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1579224432BA005CD170 /* DSTARHeader.h */; };
-		E23F15E22244DC15005CD170 /* DSTARFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1585224432BB005CD170 /* DSTARFrame.h */; };
-		E23F15E32244DC15005CD170 /* NSData+CRC.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158C224432BC005CD170 /* NSData+CRC.h */; };
-		E23F15E42244DC15005CD170 /* DExtraClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157A224432BA005CD170 /* DExtraClient.h */; };
-		E23F15E52244DC15005CD170 /* DVCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F15AD2244D1D2005CD170 /* DVCodec.h */; };
+		E23F15D82244DC15005CD170 /* DExtraConnectPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157B224432BB005CD170 /* DExtraConnectPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15D92244DC15005CD170 /* DExtraConnectAckPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1581224432BB005CD170 /* DExtraConnectAckPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15DA2244DC15005CD170 /* DExtraConnectNackPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157C224432BB005CD170 /* DExtraConnectNackPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15DB2244DC15005CD170 /* DExtraDisconnectPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1575224432BA005CD170 /* DExtraDisconnectPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15DC2244DC15005CD170 /* DExtraDisconnectAckPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1582224432BB005CD170 /* DExtraDisconnectAckPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15DD2244DC15005CD170 /* DExtraKeepAlivePacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1588224432BC005CD170 /* DExtraKeepAlivePacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15DE2244DC15005CD170 /* DVHeaderPacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158E224432BC005CD170 /* DVHeaderPacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15DF2244DC15005CD170 /* DVFramePacket.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158D224432BC005CD170 /* DVFramePacket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15E02244DC15005CD170 /* DVStream.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1576224432BA005CD170 /* DVStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15E12244DC15005CD170 /* DSTARHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1579224432BA005CD170 /* DSTARHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15E22244DC15005CD170 /* DSTARFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F1585224432BB005CD170 /* DSTARFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15E32244DC15005CD170 /* NSData+CRC.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F158C224432BC005CD170 /* NSData+CRC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15E42244DC15005CD170 /* DExtraClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F157A224432BA005CD170 /* DExtraClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E23F15E52244DC15005CD170 /* DVCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F15AD2244D1D2005CD170 /* DVCodec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23F15E62244DC15005CD170 /* CocoaDV.h in Headers */ = {isa = PBXBuildFile; fileRef = E23F156D224430FB005CD170 /* CocoaDV.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E23F15E72244DC2B005CD170 /* DExtraConnectPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F1584224432BB005CD170 /* DExtraConnectPacket.m */; };
 		E23F15E82244DC2B005CD170 /* DExtraConnectAckPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = E23F157D224432BB005CD170 /* DExtraConnectAckPacket.m */; };
@@ -221,21 +221,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E23F15A6224432BD005CD170 /* NSData+CRC.h in Headers */,
-				E23F1590224432BD005CD170 /* DVStream.h in Headers */,
-				E23F159C224432BD005CD170 /* DExtraDisconnectAckPacket.h in Headers */,
-				E23F15AF2244D1D2005CD170 /* DVCodec.h in Headers */,
-				E23F158F224432BD005CD170 /* DExtraDisconnectPacket.h in Headers */,
-				E23F159F224432BD005CD170 /* DSTARFrame.h in Headers */,
-				E23F15A2224432BD005CD170 /* DExtraKeepAlivePacket.h in Headers */,
-				E23F1596224432BD005CD170 /* DExtraConnectNackPacket.h in Headers */,
-				E23F1593224432BD005CD170 /* DSTARHeader.h in Headers */,
 				E23F1595224432BD005CD170 /* DExtraConnectPacket.h in Headers */,
-				E23F15A7224432BD005CD170 /* DVFramePacket.h in Headers */,
-				E23F156F224430FB005CD170 /* CocoaDV.h in Headers */,
-				E23F15A8224432BD005CD170 /* DVHeaderPacket.h in Headers */,
-				E23F1594224432BD005CD170 /* DExtraClient.h in Headers */,
 				E23F159B224432BD005CD170 /* DExtraConnectAckPacket.h in Headers */,
+				E23F1596224432BD005CD170 /* DExtraConnectNackPacket.h in Headers */,
+				E23F158F224432BD005CD170 /* DExtraDisconnectPacket.h in Headers */,
+				E23F159C224432BD005CD170 /* DExtraDisconnectAckPacket.h in Headers */,
+				E23F15A2224432BD005CD170 /* DExtraKeepAlivePacket.h in Headers */,
+				E23F15A8224432BD005CD170 /* DVHeaderPacket.h in Headers */,
+				E23F15A7224432BD005CD170 /* DVFramePacket.h in Headers */,
+				E23F1590224432BD005CD170 /* DVStream.h in Headers */,
+				E23F1593224432BD005CD170 /* DSTARHeader.h in Headers */,
+				E23F159F224432BD005CD170 /* DSTARFrame.h in Headers */,
+				E23F15A6224432BD005CD170 /* NSData+CRC.h in Headers */,
+				E23F1594224432BD005CD170 /* DExtraClient.h in Headers */,
+				E23F15AF2244D1D2005CD170 /* DVCodec.h in Headers */,
+				E23F156F224430FB005CD170 /* CocoaDV.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +243,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E23F15E62244DC15005CD170 /* CocoaDV.h in Headers */,
 				E23F15D82244DC15005CD170 /* DExtraConnectPacket.h in Headers */,
 				E23F15D92244DC15005CD170 /* DExtraConnectAckPacket.h in Headers */,
 				E23F15DA2244DC15005CD170 /* DExtraConnectNackPacket.h in Headers */,
@@ -258,6 +257,7 @@
 				E23F15E32244DC15005CD170 /* NSData+CRC.h in Headers */,
 				E23F15E42244DC15005CD170 /* DExtraClient.h in Headers */,
 				E23F15E52244DC15005CD170 /* DVCodec.h in Headers */,
+				E23F15E62244DC15005CD170 /* CocoaDV.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,20 +357,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E23F15A3224432BD005CD170 /* DExtraClient.m in Sources */,
-				E23F15A4224432BD005CD170 /* NSData+CRC.m in Sources */,
-				E23F15A0224432BD005CD170 /* DExtraKeepAlivePacket.m in Sources */,
-				E23F1598224432BD005CD170 /* DSTARFrame.m in Sources */,
-				E23F1591224432BD005CD170 /* DExtraDisconnectPacket.m in Sources */,
-				E23F15A5224432BD005CD170 /* DVStream.m in Sources */,
 				E23F159E224432BD005CD170 /* DExtraConnectPacket.m in Sources */,
-				E23F1599224432BD005CD170 /* DVHeaderPacket.m in Sources */,
-				E23F159D224432BD005CD170 /* DExtraConnectNackPacket.m in Sources */,
-				E23F159A224432BD005CD170 /* DVFramePacket.m in Sources */,
-				E23F15B02244D1D2005CD170 /* DVCodec.m in Sources */,
-				E23F15A1224432BD005CD170 /* DExtraDisconnectAckPacket.m in Sources */,
 				E23F1597224432BD005CD170 /* DExtraConnectAckPacket.m in Sources */,
+				E23F159D224432BD005CD170 /* DExtraConnectNackPacket.m in Sources */,
+				E23F1591224432BD005CD170 /* DExtraDisconnectPacket.m in Sources */,
+				E23F15A1224432BD005CD170 /* DExtraDisconnectAckPacket.m in Sources */,
+				E23F15A0224432BD005CD170 /* DExtraKeepAlivePacket.m in Sources */,
+				E23F1599224432BD005CD170 /* DVHeaderPacket.m in Sources */,
+				E23F159A224432BD005CD170 /* DVFramePacket.m in Sources */,
+				E23F15A5224432BD005CD170 /* DVStream.m in Sources */,
 				E23F1592224432BD005CD170 /* DSTARHeader.m in Sources */,
+				E23F1598224432BD005CD170 /* DSTARFrame.m in Sources */,
+				E23F15A4224432BD005CD170 /* NSData+CRC.m in Sources */,
+				E23F15A3224432BD005CD170 /* DExtraClient.m in Sources */,
+				E23F15B02244D1D2005CD170 /* DVCodec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
