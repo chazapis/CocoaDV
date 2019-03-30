@@ -19,19 +19,26 @@
 
 #import <Foundation/Foundation.h>
 
+#import "DVHeaderPacket.h"
+#import "DVFramePacket.h"
 #import "DSTARHeader.h"
 #import "DSTARFrame.h"
 
 @interface DVStream : NSObject
 
+- (id)initWithDVHeaderPacket:(DVHeaderPacket *)dvHeaderPacket;
 - (id)initWithDSTARHeader:(DSTARHeader *)dstarHeader;
 
+- (void)appendDVFramePacket:(DVFramePacket *)dvFramePacket;
 - (void)appendDSTARFrame:(DSTARFrame *)dstarFrame;
 - (void)markLast;
+
+- (void)removeAllDVFramePackets;
 
 - (id)dvPacketAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly) unsigned short streamId;
+@property (nonatomic, readonly) DSTARHeader *dstarHeader;
 @property (nonatomic, readonly, getter=getDVPacketCount) NSUInteger dvPacketCount;
 
 @end

@@ -21,9 +21,6 @@
 
 #include <stdlib.h>
 
-#import "DVHeaderPacket.h"
-#import "DVFramePacket.h"
-
 @interface DVStream ()
 
 @property (nonatomic, strong) NSMutableArray *packetArray;
@@ -34,23 +31,41 @@
 
 @implementation DVStream
 
-- (id)initWithDSTARHeader:(DSTARHeader *)dstarHeader {
+- (id)initWithDVHeaderPacket:(DVHeaderPacket *)dvHeaderPacket {
     if (self = [super init]) {
-        _streamId = arc4random_uniform(65536);
-        
         self.packetArray = [[NSMutableArray alloc] initWithCapacity:1500]; // About 30 seconds of audio
-        DVHeaderPacket *dvHeaderPacket = [[DVHeaderPacket alloc] initWithBand1:0
-                                                                         band2:0
-                                                                         band3:0
-                                                                      streamId:_streamId
-                                                                   dstarHeader:dstarHeader];
         [self.packetArray addObject:dvHeaderPacket];
         
+        _streamId = dvHeaderPacket.streamId;
+        _dstarHeader = dvHeaderPacket.dstarHeader;
         _nextPacketId = 0;
         _hasLast = NO;
     }
     return self;
+}
 
+- (id)initWithDSTARHeader:(DSTARHeader *)dstarHeader {
+    DVHeaderPacket *dvHeaderPacket = [[DVHeaderPacket alloc] initWithBand1:0
+                                                                     band2:0
+                                                                     band3:0
+                                                                  streamId:arc4random_uniform(65536)
+                                                               dstarHeader:dstarHeader];
+    return [self initWithDVHeaderPacket:dvHeaderPacket];
+}
+
+- (void)appendDVFramePacket:(DVFramePacket *)dvFramePacket {
+    if (_streamId != dvFramePacket.streamId)
+        return;
+
+    @synchronized (self) {
+        if (self.hasLast)
+            return;
+
+        self.nextPacketId = (dvFramePacket.packetId + 1) % 21;
+        if (dvFramePacket.isLast)
+            self.hasLast = YES;
+        [self.packetArray addObject:dvFramePacket];
+    }
 }
 
 - (void)appendDSTARFrame:(DSTARFrame *)dstarFrame {
@@ -81,6 +96,12 @@
             ((DVFramePacket *)packet).packetId |= 0x40;
         }
         self.hasLast = YES;
+    }
+}
+
+- (void)removeAllDVFramePackets {
+    @synchronized (self) {
+        [self.packetArray removeObjectsInRange:NSMakeRange(1, self.packetArray.count - 1)];
     }
 }
 
