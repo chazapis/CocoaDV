@@ -20,9 +20,11 @@
 #import "DVCodec.h"
 
 #import <CocoaCodec2/codec2.h>
+#import <CocoaCodec2/golay23.h>
 
 @interface DVCodec () {
-    struct CODEC2 *codec2State;
+    struct CODEC2 *codec2Mode3200State;
+    struct CODEC2 *codec2Mode2400State;
 };
 
 @property (nonatomic, strong) AVAudioFormat *playerFormat;
@@ -38,7 +40,9 @@
 
 - (id)initWithPlayerFormat:(AVAudioFormat *)playerFormat recorderFormat:(AVAudioFormat *)recorderFormat {
     if ((self = [super init])) {
-        codec2State = codec2_create(CODEC2_MODE_3200);
+        codec2Mode3200State = codec2_create(CODEC2_MODE_3200);
+        codec2Mode2400State = codec2_create(CODEC2_MODE_2400);
+        golay23_init();
 
         self.playerFormat = playerFormat;
         self.recorderFormat = recorderFormat;
@@ -52,16 +56,54 @@
 }
 
 - (void)dealloc {
-    codec2_destroy(codec2State);
+    codec2_destroy(codec2Mode3200State);
+    codec2_destroy(codec2Mode2400State);
 }
 
-- (AVAudioPCMBuffer *)decodeDSTARFrame:(DSTARFrame *)dstarFrame {
-    NSError *error;
-    
+- (AVAudioPCMBuffer *)decodeDSTARFrame:(DSTARFrame *)dstarFrame fromStream:(DVStream *)stream {
     AVAudioPCMBuffer *internalBuffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.internalFormat frameCapacity:160];
     AVAudioPCMBuffer *playerBuffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:self.playerFormat frameCapacity:self.playerFormat.sampleRate * 0.02];
 
-    codec2_decode(codec2State, (short *)(internalBuffer.int16ChannelData[0]), dstarFrame.codec.bytes);
+    if (stream.dstarHeader.flag3 == 0x01) {
+        // Codec 2 mode 3200 without FEC
+        codec2_decode(codec2Mode3200State, (short *)(internalBuffer.int16ChannelData[0]), dstarFrame.codec.bytes);
+    } else if (stream.dstarHeader.flag3 == 0x03) {
+        // Codec 2 mode 2400 with FEC
+
+        unsigned char codec[9];
+        int receivedCodeword;
+        int correctedCodeword;
+        unsigned char partialByte;
+        // unsigned int bitErrors = 0;
+
+        memcpy(codec, dstarFrame.codec.bytes, 9);
+
+        receivedCodeword = ((codec[0] << 15) |
+                            (((codec[1] >> 4) & 0x0F) << 11) |
+                            (codec[6] << 3) |
+                            ((codec[7] >> 5) & 0x07));
+        correctedCodeword = golay23_decode(receivedCodeword);
+        // bitErrors += golay23_count_errors(receivedCodeword, correctedCodeword);
+
+        codec[0] = (unsigned char)((correctedCodeword >> 15) & 0xFF);
+        partialByte = (unsigned char)(((correctedCodeword >> 11) & 0x0F) << 4);
+
+        receivedCodeword = (((codec[1] & 0x0F) << 19) |
+                            (codec[2] << 11) |
+                            ((codec[7] & 0x1F) << 6) |
+                            ((codec[8] >> 2) & 0x3F));
+        correctedCodeword = golay23_decode(receivedCodeword);
+        // bitErrors += golay23_count_errors(receivedCodeword, correctedCodeword);
+        // NSLog(@"DVCodec: CPacket decoded with %u bit errors", bitErrors);
+
+        codec[1] = partialByte | (unsigned char)((correctedCodeword >> 19) & 0x0F);
+        codec[2] = (unsigned char)((correctedCodeword >> 11) & 0xFF);
+
+        codec2_decode(codec2Mode2400State, (short *)(internalBuffer.int16ChannelData[0]), codec);
+    }
+
+    NSError *error;
+    
     internalBuffer.frameLength = 160;
     AVAudioConverterOutputStatus status __unused = [self.audioPlayerConverter convertToBuffer:playerBuffer error:&error withInputFromBlock:^(AVAudioPacketCount inNumberOfPackets, AVAudioConverterInputStatus *outStatus) {
         *outStatus = AVAudioConverterInputStatus_HaveData;
@@ -87,7 +129,7 @@
     unsigned char codec[9];
     unsigned char data[] = {0x00, 0x00, 0x00};
     for (int i = 0; i < internalBuffer.frameLength; i += 160) {
-        codec2_encode(self->codec2State, codec, &(internalBuffer.int16ChannelData[0][i]));
+        codec2_encode(self->codec2Mode3200State, codec, &(internalBuffer.int16ChannelData[0][i]));
         codec[8] = 0x00;
         
         DSTARFrame *dstarFrame = [[DSTARFrame alloc] initWithCodec:[[NSData alloc] initWithBytes:codec length:9]

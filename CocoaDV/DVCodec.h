@@ -27,8 +27,8 @@
 
 - (id)initWithPlayerFormat:(AVAudioFormat *)playerFormat recorderFormat:(AVAudioFormat *)recorderFormat;
 
-- (AVAudioPCMBuffer *)decodeDSTARFrame:(DSTARFrame *)dstarFrame;
-- (void)encodeBuffer:(AVAudioPCMBuffer *)buffer intoStream:(DVStream *)stream;
+- (AVAudioPCMBuffer *)decodeDSTARFrame:(DSTARFrame *)dstarFrame fromStream:(DVStream *)stream;
+- (void)encodeBuffer:(AVAudioPCMBuffer *)buffer intoStream:(DVStream *)stream; // Only Codec 2 mode 3200 without FEC supported
     
 @property (nonatomic, strong, readonly) AVAudioFormat *playerFormat; // What to decode to
 @property (nonatomic, strong, readonly) AVAudioFormat *recorderFormat; // What to encode from
